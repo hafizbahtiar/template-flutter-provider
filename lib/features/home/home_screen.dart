@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:template_flutter_provider/core/navigation/routes_name.dart';
 import 'package:template_flutter_provider/data/entities/user.dart';
 import 'package:template_flutter_provider/data/objectbox/objectbox.dart';
 import 'package:template_flutter_provider/data/repositories/user_repository.dart';
@@ -27,6 +28,12 @@ class HomeScreen extends StatelessWidget {
                         'User ${DateTime.now().millisecondsSinceEpoch}',
                         '${DateTime.now().millisecondsSinceEpoch}@test.com',
                       ),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.category),
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(RoutesName.category);
+                  },
                 ),
               ],
             ),

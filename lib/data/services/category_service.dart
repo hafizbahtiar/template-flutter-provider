@@ -8,7 +8,7 @@ class CategoryService {
 
   Future<void> addCategory(String name, bool isIncome, {String? description, Category? parentCategory}) async {
     final category = Category(name: name, isIncome: isIncome, description: description, parentCategory: parentCategory);
-    await categoryRepository.addCategory(category);
+    await categoryRepository.addCategory(category.name, category.isIncome);
   }
 
   List<Category> getAllCategories() {

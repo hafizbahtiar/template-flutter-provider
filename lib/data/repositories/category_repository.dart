@@ -8,9 +8,9 @@ class CategoryRepository {
   CategoryRepository(this.store);
 
   // Add a new category
-  Future<void> addCategory(Category category) async {
-    final box = store.box<Category>();
-    box.put(category);
+  Future<void> addCategory(String name, bool isIncome, {String? description, Category? parentCategory}) async {
+    final category = Category(name: name, isIncome: isIncome, description: null, parentCategory: null);
+    store.box<Category>().put(category);
   }
 
   // Get all categories
