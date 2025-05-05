@@ -1,0 +1,177 @@
+{
+    "@@locale": "en",
+    "welcome": "Welcome",
+    "@welcome": {
+        "description": "Welcome message displayed on the login screen"
+    },
+    "back": "Back",
+    "@back": {
+        "description": "Label for the back button"
+    },
+    "cancel": "Cancel",
+    "@cancel": {
+        "description": "Label for the cancel button"
+    },
+    "signIn": "Sign In",
+    "@signIn": {
+        "description": "Label for the sign in button"
+    },
+    "signUp": "Sign Up",
+    "@signUp": {
+        "description": "Label for the sign up button"
+    },
+    "email": "Email",
+    "@email": {
+        "description": "Label for the email input field"
+    },
+    "pleaseEnterEmail": "Please enter your email",
+    "@pleaseEnterEmail": {
+        "description": "Placeholder text for the email input field"
+    },
+    "password": "Password",
+    "@password": {
+        "description": "Label for the password input field"
+    },
+    "forgotPassword": "Forgot Password?",
+    "@forgotPassword": {
+        "description": "Label for the forgot password link"
+    },
+    "dontHaveAccount": "Don't have an account?",
+    "@dontHaveAccount": {
+        "description": "Label for the prompt to create a new account"
+    },
+    "requiredField": "This field is required.",
+    "@requiredField": {
+        "description": "Message displayed when a required field is empty"
+    },
+    "emailRequired": "Email is required.",
+    "@emailRequired": {
+        "description": "Message displayed when the email field is empty"
+    },
+    "invalidEmail": "Please enter a valid email address.",
+    "@invalidEmail": {
+        "description": "Message displayed when the email format is invalid"
+    },
+    "invalidNumber": "Please enter a valid number.",
+    "@invalidNumber": {
+        "description": "Message displayed when the input is not a valid number"
+    },
+    "passwordRequired": "Password is required.",
+    "@passwordRequired": {
+        "description": "Message displayed when the password field is empty"
+    },
+    "passwordTooShort": "Password must be at least 8 characters long.",
+    "@passwordTooShort": {
+        "description": "Message displayed when the password does not meet the minimum length requirement"
+    },
+    "passwordInvalid": "Password must contain at least one letter and one number.",
+    "@passwordInvalid": {
+        "description": "Message displayed when the password does not meet the required format"
+    },
+    "resetPassword": "Reset Password",
+    "@resetPassword": {
+        "description": "Label for the reset password button"
+    },
+    "enterEmailForReset": "Enter your email to reset your password",
+    "@enterEmailForReset": {
+        "description": "Placeholder text for the email input field in the reset password screen"
+    },
+    "resetEmailSent": "A reset password email has been sent to your email address.",
+    "@resetEmailSent": {
+        "description": "Message displayed when the reset password email is sent"
+    },
+    "sendResetLink": "Send Reset Link",
+    "@sendResetLink": {
+        "description": "Label for the button to send the reset password link"
+    },
+    "rememberMe": "Remember me",
+    "@rememberMe": {
+        "description": "Label for the remember me checkbox"
+    },
+    "firstName": "First Name",
+    "@firstName": {
+        "description": "Label for the first name input field"
+    },
+    "firstNameRequired": "First name is required.",
+    "@firstNameRequired": {
+        "description": "Message displayed when the first name field is empty"
+    },
+    "lastName": "Last Name",
+    "@lastName": {
+        "description": "Label for the last name input field"
+    },
+    "lastNameRequired": "Last name is required.",
+    "@lastNameRequired": {
+        "description": "Message displayed when the last name field is empty"
+    },
+    "confirmPassword": "Confirm Password",
+    "@confirmPassword": {
+        "description": "Label for the confirm password input field"
+    },
+    "confirmPasswordRequired": "Confirm password is required.",
+    "@confirmPasswordRequired": {
+        "description": "Message displayed when the confirm password field is empty"
+    },
+    "passwordsDoNotMatch": "Passwords do not match.",
+    "@passwordsDoNotMatch": {
+        "description": "Message displayed when the password and confirm password fields do not match"
+    },
+    "iAgreeToThe": "I agree to the",
+    "@iAgreeToThe": {
+        "description": "Label for the terms and conditions agreement"
+    },
+    "termOfService": "Terms of Service",
+    "@termOfService": {
+        "description": "Label for the terms of service link"
+    },
+    "and": "and",
+    "@and": {
+        "description": "Label for the conjunction 'and'"
+    },
+    "privacyPolicy": "Privacy Policy",
+    "@privacyPolicy": {
+        "description": "Label for the privacy policy link"
+    },
+    "alreadyHaveAccount": "Already have an account?",
+    "@alreadyHaveAccount": {
+        "description": "Label for the prompt to sign in if the user already has an account"
+    },
+    "mustAgreeToTerms": "You must agree to the terms and conditions.",
+    "@mustAgreeToTerms": {
+        "description": "Message displayed when the user does not agree to the terms and conditions"
+    },
+    "createAccount": "Create Account",
+    "@createAccount": {
+        "description": "Label for the create account button"
+    },
+    "fillDetailsBelow": "Fill in the details below to create an account",
+    "@fillDetailsBelow": {
+        "description": "Placeholder text for the account creation form"
+    },
+    "registrationSuccessful": "Registration successful! Please check your email to verify your account.",
+    "@registrationSuccessful": {
+        "description": "Message displayed when the registration is successful"
+    },
+    "passwordMinLength": "Password must be at least {minLength} characters long.",
+    "@passwordMinLength": {
+        "placeholders": {
+            "minLength": {
+                "type": "int",
+                "description": "Minimum length of the password"
+            }
+        },
+        "description": "Message displayed when the password does not meet the minimum length requirement"
+    },
+    "passwordUppercase": "Password must contain at least one uppercase letter.",
+    "@passwordUppercase": {
+        "description": "Message displayed when the password does not contain an uppercase letter"
+    },
+    "passwordNumber": "Password must contain at least one number.",
+    "@passwordNumber": {
+        "description": "Message displayed when the password does not contain a number"
+    },
+    "passwordSpecialChar": "Password must contain at least one special character.",
+    "@passwordSpecialChar": {
+        "description": "Message displayed when the password does not contain a special character"
+    }
+}

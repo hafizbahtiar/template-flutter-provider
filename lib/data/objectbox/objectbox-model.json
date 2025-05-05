@@ -1,0 +1,264 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:3697693743234403229",
+      "lastPropertyId": "6:4679970588478689942",
+      "name": "User",
+      "properties": [
+        {
+          "id": "1:5327466088276136818",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:560190060910269304",
+          "name": "name",
+          "type": 9,
+          "flags": 2080,
+          "indexId": "1:1441455354396562553"
+        },
+        {
+          "id": "3:8313325085214270348",
+          "name": "createdAt",
+          "type": 10
+        },
+        {
+          "id": "4:10339671977305324",
+          "name": "email",
+          "type": 9,
+          "flags": 2080,
+          "indexId": "8:930685476418907478"
+        },
+        {
+          "id": "5:4383210036908708845",
+          "name": "currency",
+          "type": 9
+        },
+        {
+          "id": "6:4679970588478689942",
+          "name": "language",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:4881306474892250789",
+      "lastPropertyId": "7:5885791248674544059",
+      "name": "Budget",
+      "properties": [
+        {
+          "id": "1:3430678885858019944",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:5195210334020333383",
+          "name": "categoryIdId",
+          "type": 11,
+          "flags": 520,
+          "indexId": "2:7698458738305419033",
+          "relationTarget": "Category"
+        },
+        {
+          "id": "3:907746399202025936",
+          "name": "amount",
+          "type": 8
+        },
+        {
+          "id": "4:1714670655134882079",
+          "name": "spent",
+          "type": 8
+        },
+        {
+          "id": "5:5624040681914985866",
+          "name": "startDate",
+          "type": 10
+        },
+        {
+          "id": "6:8401191334292824922",
+          "name": "endDate",
+          "type": 10
+        },
+        {
+          "id": "7:5885791248674544059",
+          "name": "goalAmount",
+          "type": 8
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:8389170420291958458",
+      "lastPropertyId": "5:6149301141097753856",
+      "name": "Category",
+      "properties": [
+        {
+          "id": "1:91233643991232084",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:3960047679987056659",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "3:4501067257139745436",
+          "name": "isIncome",
+          "type": 1
+        },
+        {
+          "id": "4:4863093944260529921",
+          "name": "description",
+          "type": 9
+        },
+        {
+          "id": "5:6149301141097753856",
+          "name": "parentCategoryId",
+          "type": 11,
+          "flags": 520,
+          "indexId": "3:4304487126258234861",
+          "relationTarget": "Category"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "4:1195267970998249339",
+      "lastPropertyId": "3:3770819237924802994",
+      "name": "PaymentMethod",
+      "properties": [
+        {
+          "id": "1:5009105957234423200",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:6241003050833108812",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "3:3770819237924802994",
+          "name": "description",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "5:8678650274571129440",
+      "lastPropertyId": "3:8765854534955240285",
+      "name": "RecurringTransaction",
+      "properties": [
+        {
+          "id": "1:7234486432560817486",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:8493226196114292061",
+          "name": "transactionIdId",
+          "type": 11,
+          "flags": 520,
+          "indexId": "4:736973411860776471",
+          "relationTarget": "Transaction"
+        },
+        {
+          "id": "3:8765854534955240285",
+          "name": "nextPaymentDate",
+          "type": 10
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "6:5450318839250540201",
+      "lastPropertyId": "10:4862898281626917457",
+      "name": "Transaction",
+      "properties": [
+        {
+          "id": "1:7394216470537392634",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:3759780525841633874",
+          "name": "date",
+          "type": 10
+        },
+        {
+          "id": "3:8035530701461784547",
+          "name": "amount",
+          "type": 8
+        },
+        {
+          "id": "4:467477562441935273",
+          "name": "description",
+          "type": 9
+        },
+        {
+          "id": "5:3088262554528557860",
+          "name": "categoryIdId",
+          "type": 11,
+          "flags": 520,
+          "indexId": "5:589056365581741503",
+          "relationTarget": "Category"
+        },
+        {
+          "id": "6:7929533445934886729",
+          "name": "paymentMethodIdId",
+          "type": 11,
+          "flags": 520,
+          "indexId": "6:8017851447156251253",
+          "relationTarget": "PaymentMethod"
+        },
+        {
+          "id": "7:2627754397037457340",
+          "name": "userIdId",
+          "type": 11,
+          "flags": 520,
+          "indexId": "7:202192739719476086",
+          "relationTarget": "User"
+        },
+        {
+          "id": "8:7578339729696629421",
+          "name": "isRecurring",
+          "type": 1
+        },
+        {
+          "id": "9:276923222364247004",
+          "name": "recurrenceInterval",
+          "type": 9
+        },
+        {
+          "id": "10:4862898281626917457",
+          "name": "status",
+          "type": 9
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "6:5450318839250540201",
+  "lastIndexId": "8:930685476418907478",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}

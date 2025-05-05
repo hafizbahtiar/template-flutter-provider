@@ -4,7 +4,8 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:logger/logger.dart';
-import 'package:template_flutter_provider/core/utils/shared_prefs.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:template_flutter_provider/core/constants/shared_prefs_name.dart';
 
 /// A singleton class that centralizes all API requests for the application.
 class ApiClient {
@@ -24,7 +25,7 @@ class ApiClient {
   final Duration _timeout;
 
   // Shared preferences for token storage
-  final _sharedPrefs = SharedPrefs();
+  final Future<SharedPreferences> _sharedPrefs = SharedPreferences.getInstance();
 
   // Private constructor
   ApiClient._({
@@ -53,23 +54,28 @@ class ApiClient {
   }
 
   /// Get the authorization token from shared preferences
-  String? get _authToken => _sharedPrefs.getValue(PrefsName.token);
+  Future<String?> get _authToken async {
+    final prefs = await _sharedPrefs;
+    return prefs.getString(SharedPrefsName.token);
+  }
 
   /// Set the authorization token in shared preferences
   Future<void> setAuthToken(String token) async {
-    await _sharedPrefs.setValue<String>(PrefsName.token, token);
+    final prefs = await _sharedPrefs;
+    await prefs.setString(SharedPrefsName.token, token);
   }
 
   /// Clear the authorization token from shared preferences
   Future<void> clearAuthToken() async {
-    await _sharedPrefs.removeValue(PrefsName.token);
+    final prefs = await _sharedPrefs;
+    await prefs.remove(SharedPrefsName.token);
   }
 
   /// Build headers for requests with customizable options
   Map<String, String> _buildHeaders({bool requiresAuth = true, Map<String, String>? additionalHeaders}) {
     final headers = {'Content-Type': 'application/json', 'Accept': 'application/json'};
 
-    if (requiresAuth && _authToken != null) {
+    if (requiresAuth) {
       headers['Authorization'] = 'Bearer $_authToken';
     }
 

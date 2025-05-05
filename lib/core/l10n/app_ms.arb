@@ -1,0 +1,177 @@
+{
+    "@@locale": "ms",
+    "welcome": "Selamat Datang",
+    "@welcome": {
+        "description": "Mesej selamat datang yang dipaparkan pada skrin log masuk"
+    },
+    "back": "Kembali",
+    "@back": {
+        "description": "Label untuk butang kembali"
+    },
+    "cancel": "Batal",
+    "@cancel": {
+        "description": "Label untuk butang batal"
+    },
+    "signIn": "Log Masuk",
+    "@signIn": {
+        "description": "Label untuk butang log masuk"
+    },
+    "signUp": "Daftar",
+    "@signUp": {
+        "description": "Label untuk butang daftar"
+    },
+    "email": "Emel",
+    "@email": {
+        "description": "Label untuk ruangan input emel"
+    },
+    "pleaseEnterEmail": "Sila masukkan emel anda",
+    "@pleaseEnterEmail": {
+        "description": "Teks penanda untuk ruangan input emel"
+    },
+    "password": "Kata Laluan",
+    "@password": {
+        "description": "Label untuk ruangan input kata laluan"
+    },
+    "forgotPassword": "Lupa Kata Laluan?",
+    "@forgotPassword": {
+        "description": "Label untuk pautan lupa kata laluan"
+    },
+    "dontHaveAccount": "Tiada akaun? ",
+    "@dontHaveAccount": {
+        "description": "Label untuk arahan mencipta akaun baru"
+    },
+    "requiredField": "Ruangan ini diperlukan.",
+    "@requiredField": {
+        "description": "Mesej dipaparkan apabila ruangan wajib tidak diisi"
+    },
+    "emailRequired": "Emel diperlukan.",
+    "@emailRequired": {
+        "description": "Mesej dipaparkan apabila ruangan emel tidak diisi"
+    },
+    "invalidEmail": "Sila masukkan alamat emel yang sah.",
+    "@invalidEmail": {
+        "description": "Mesej dipaparkan apabila format emel tidak sah"
+    },
+    "invalidNumber": "Sila masukkan nombor yang sah.",
+    "@invalidNumber": {
+        "description": "Mesej dipaparkan apabila input bukan nombor yang sah"
+    },
+    "passwordRequired": "Kata laluan diperlukan.",
+    "@passwordRequired": {
+        "description": "Mesej dipaparkan apabila ruangan kata laluan tidak diisi"
+    },
+    "passwordTooShort": "Kata laluan mesti sekurang-kurangnya 8 aksara.",
+    "@passwordTooShort": {
+        "description": "Mesej dipaparkan apabila kata laluan tidak memenuhi keperluan panjang minimum"
+    },
+    "passwordInvalid": "Kata laluan mesti mengandungi sekurang-kurangnya satu huruf dan satu nombor.",
+    "@passwordInvalid": {
+        "description": "Mesej dipaparkan apabila kata laluan tidak memenuhi format yang diperlukan"
+    },
+    "resetPassword": "Tetapkan semula Kata Laluan",
+    "@resetPassword": {
+        "description": "Label untuk butang tetapkan semula kata laluan"
+    },
+    "enterEmailForReset": "Masukkan emel anda untuk menetapkan semula kata laluan",
+    "@enterEmailForReset": {
+        "description": "Arahan untuk memasukkan emel bagi menetapkan semula kata laluan"
+    },
+    "resetEmailSent": "Emel tetapan semula telah dihantar.",
+    "@resetEmailSent": {
+        "description": "Mesej yang menunjukkan emel tetapan semula telah dihantar"
+    },
+    "sendResetLink": "Hantar Pautan Tetapan Semula",
+    "@sendResetLink": {
+        "description": "Label untuk butang hantar pautan tetapan semula"
+    },
+    "rememberMe": "Ingat saya",
+    "@rememberMe": {
+        "description": "Label untuk kotak semak ingat saya"
+    },
+    "firstName": "Nama Pertama",
+    "@firstName": {
+        "description": "Label untuk ruangan input nama pertama"
+    },
+    "firstNameRequired": "Nama pertama diperlukan.",
+    "@firstNameRequired": {
+        "description": "Mesej dipaparkan apabila ruangan nama pertama tidak diisi"
+    },
+    "lastName": "Nama Akhir",
+    "@lastName": {
+        "description": "Label untuk ruangan input nama akhir"
+    },
+    "lastNameRequired": "Nama akhir diperlukan.",
+    "@lastNameRequired": {
+        "description": "Mesej dipaparkan apabila ruangan nama akhir tidak diisi"
+    },
+    "confirmPassword": "Sahkan Kata Laluan",
+    "@confirmPassword": {
+        "description": "Label untuk ruangan input sahkan kata laluan"
+    },
+    "confirmPasswordRequired": "Sahkan kata laluan diperlukan.",
+    "@confirmPasswordRequired": {
+        "description": "Mesej dipaparkan apabila ruangan sahkan kata laluan tidak diisi"
+    },
+    "passwordsDoNotMatch": "Kata laluan tidak sepadan.",
+    "@passwordsDoNotMatch": {
+        "description": "Mesej dipaparkan apabila kata laluan dan sahkan kata laluan tidak sepadan"
+    },
+    "iAgreeToThe": "Saya bersetuju dengan",
+    "@iAgreeToThe": {
+        "description": "Label untuk menyatakan persetujuan kepada terma dan dasar"
+    },
+    "termOfService": "Terma Perkhidmatan",
+    "@termOfService": {
+        "description": "Label untuk pautan terma perkhidmatan"
+    },
+    "and": "dan",
+    "@and": {
+        "description": "Label untuk menyambungkan terma dan dasar"
+    },
+    "privacyPolicy": "Dasar Privasi",
+    "@privacyPolicy": {
+        "description": "Label untuk pautan dasar privasi"
+    },
+    "alreadyHaveAccount": "Sudah mempunyai akaun? ",
+    "@alreadyHaveAccount": {
+        "description": "Label untuk arahan log masuk jika sudah mempunyai akaun"
+    },
+    "mustAgreeToTerms": "Anda mesti bersetuju dengan terma dan dasar kami.",
+    "@mustAgreeToTerms": {
+        "description": "Mesej dipaparkan apabila pengguna tidak bersetuju dengan terma dan dasar"
+    },
+    "createAccount": "Cipta Akaun",
+    "@createAccount": {
+        "description": "Label untuk butang cipta akaun"
+    },
+    "fillDetailsBelow": "Sila isi butiran di bawah untuk mendaftar.",
+    "@fillDetailsBelow": {
+        "description": "Arahan untuk mengisi butiran pendaftaran"
+    },
+    "registrationSuccessful": "Pendaftaran anda telah berjaya.",
+    "@registrationSuccessful": {
+        "description": "Mesej yang menunjukkan pendaftaran pengguna telah berjaya"
+    },
+    "passwordMinLength": "Kata laluan mesti sekurang-kurangnya {minLength} aksara.",
+    "@passwordMinLength": {
+        "placeholders": {
+            "minLength": {
+                "type": "int",
+                "description": "Panjang minimum kata laluan"
+            }
+        },
+        "description": "Mesej dipaparkan apabila kata laluan tidak memenuhi panjang minimum"
+    },
+    "passwordUppercase": "Kata laluan mesti mengandungi sekurang-kurangnya satu huruf besar.",
+    "@passwordUppercase": {
+        "description": "Mesej dipaparkan apabila kata laluan tidak mengandungi huruf besar"
+    },
+    "passwordNumber": "Kata laluan mesti mengandungi sekurang-kurangnya satu nombor.",
+    "@passwordNumber": {
+        "description": "Mesej dipaparkan apabila kata laluan tidak mengandungi nombor"
+    },
+    "passwordSpecialChar": "Kata laluan mesti mengandungi sekurang-kurangnya satu aksara khas.",
+    "@passwordSpecialChar": {
+        "description": "Mesej dipaparkan apabila kata laluan tidak mengandungi aksara khas"
+    }
+}

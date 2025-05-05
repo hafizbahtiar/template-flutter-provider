@@ -37,9 +37,16 @@ dependencies:
   provider: ^6.1.4
   http: ^1.3.0
   flutter_dotenv: ^5.2.1
-  intl: ^0.20.2
   shared_preferences: ^2.5.3
   logger: ^2.5.0
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.19.0
+  connectivity_plus: ^6.1.4
+  objectbox: ^4.2.0
+  objectbox_sync_flutter_libs: any
+  path: ^1.9.1
+  path_provider: ^2.1.5
 
 dev_dependencies:
   flutter_test:
@@ -51,6 +58,8 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
+  build_runner: ^2.4.15
+  objectbox_generator: any
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -62,6 +71,7 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  generate: true
 
   # To add assets to your application, add an assets section, like this:
   # assets:
@@ -93,3 +103,14 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
+flutter_gen:
+  synthetic-package: false
+
+objectbox:
+  # Writes objectbox-model.json and objectbox.g.dart to lib/custom (and test/custom).
+  output_dir: data/objectbox
+  # Or optionally specify the lib and test output folder separately.
+  # output_dir:
+  #   lib: custom
+  #   test: other
