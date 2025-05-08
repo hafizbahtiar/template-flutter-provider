@@ -1,33 +1,30 @@
 import 'package:template_flutter_provider/data/entities/recurring_transaction.dart';
-import 'package:objectbox/objectbox.dart';
+import 'package:template_flutter_provider/data/entities/transaction.dart';
+import 'package:template_flutter_provider/data/services/recurring_transaction_service.dart';
 
 class RecurringTransactionRepository {
-  final Store store;
+  final RecurringTransactionService recurringTransactionService;
 
-  RecurringTransactionRepository(this.store);
+  RecurringTransactionRepository(this.recurringTransactionService);
 
-  Future<void> addRecurringTransaction(RecurringTransaction recurringTransaction) async {
-    final box = store.box<RecurringTransaction>();
-    box.put(recurringTransaction);
+  Future<void> addRecurringTransaction(Transaction transaction, DateTime nextDate) async {
+    final recurring = RecurringTransaction(nextPaymentDate: nextDate);
+    await recurringTransactionService.addRecurringTransaction(recurring);
   }
 
   List<RecurringTransaction> getAllRecurringTransactions() {
-    final box = store.box<RecurringTransaction>();
-    return box.getAll();
+    return recurringTransactionService.getAllRecurringTransactions();
   }
 
-  RecurringTransaction? getRecurringTransactionById(int id) {
-    final box = store.box<RecurringTransaction>();
-    return box.get(id);
+  RecurringTransaction? getById(int id) {
+    return recurringTransactionService.getRecurringTransactionById(id);
   }
 
   Future<void> updateRecurringTransaction(RecurringTransaction transaction) async {
-    final box = store.box<RecurringTransaction>();
-    box.put(transaction);
+    await recurringTransactionService.updateRecurringTransaction(transaction);
   }
 
   Future<void> deleteRecurringTransaction(int id) async {
-    final box = store.box<RecurringTransaction>();
-    box.remove(id);
+    await recurringTransactionService.deleteRecurringTransaction(id);
   }
 }

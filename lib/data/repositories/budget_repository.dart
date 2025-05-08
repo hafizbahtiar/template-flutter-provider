@@ -1,28 +1,37 @@
 import 'package:template_flutter_provider/data/entities/budget.dart';
-import 'package:objectbox/objectbox.dart';
+import 'package:template_flutter_provider/data/entities/category.dart';
+import 'package:template_flutter_provider/data/services/budget_service.dart';
 
 class BudgetRepository {
-  final Store store;
+  final BudgetService budgetService;
 
-  BudgetRepository(this.store);
+  BudgetRepository(this.budgetService);
 
-  Future<void> addBudget(Budget budget) async {
-    store.box<Budget>().put(budget);
+  Future<void> addBudget({
+    required double amount,
+    required double spent,
+    required DateTime startDate,
+    required DateTime endDate,
+    required double goalAmount,
+    required Category category,
+  }) async {
+    final budget = Budget(amount: amount, spent: spent, startDate: startDate, endDate: endDate, goalAmount: goalAmount);
+    await budgetService.addBudget(budget);
   }
 
   List<Budget> getAllBudgets() {
-    return store.box<Budget>().getAll();
+    return budgetService.getAllBudgets();
   }
 
   Budget? getBudgetById(int id) {
-    return store.box<Budget>().get(id);
+    return budgetService.getBudgetById(id);
   }
 
   Future<void> updateBudget(Budget budget) async {
-    store.box<Budget>().put(budget);
+    await budgetService.updateBudget(budget);
   }
 
   Future<void> deleteBudget(int id) async {
-    store.box<Budget>().remove(id);
+    await budgetService.deleteBudget(id);
   }
 }

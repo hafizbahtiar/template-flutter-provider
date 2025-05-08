@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:template_flutter_provider/data/objectbox/objectbox.dart';
 import 'package:template_flutter_provider/data/repositories/category_repository.dart';
+import 'package:template_flutter_provider/data/services/category_service.dart';
 
 import 'category_provider.dart';
 
@@ -13,7 +14,7 @@ class CategoryScreen extends StatelessWidget {
     final objectBox = context.read<ObjectBox>();
 
     return ChangeNotifierProvider(
-      create: (_) => CategoryProvider(categoryRepository: CategoryRepository(objectBox.store)),
+      create: (_) => CategoryProvider(categoryRepository: CategoryRepository(CategoryService(objectBox.store))),
       child: Consumer<CategoryProvider>(
         builder: (context, categoryProvider, _) {
           return Scaffold(

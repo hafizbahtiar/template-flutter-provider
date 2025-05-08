@@ -1,39 +1,29 @@
 import 'package:template_flutter_provider/data/entities/category.dart';
-
-import '../objectbox/objectbox.g.dart';
+import 'package:template_flutter_provider/data/services/category_service.dart';
 
 class CategoryRepository {
-  final Store store;
+  final CategoryService categoryService;
 
-  CategoryRepository(this.store);
+  CategoryRepository(this.categoryService);
 
-  // Add a new category
   Future<void> addCategory(String name, bool isIncome, {String? description, Category? parentCategory}) async {
-    final category = Category(name: name, isIncome: isIncome, description: null, parentCategory: null);
-    store.box<Category>().put(category);
+    final category = Category(name: name, isIncome: isIncome, description: description, parentCategory: parentCategory);
+    await categoryService.addCategory(category.name, category.isIncome);
   }
 
-  // Get all categories
   List<Category> getAllCategories() {
-    final box = store.box<Category>();
-    return box.getAll();
+    return categoryService.getAllCategories();
   }
 
-  // Get category by ID
   Category? getCategoryById(int id) {
-    final box = store.box<Category>();
-    return box.get(id);
+    return categoryService.getCategoryById(id);
   }
 
-  // Update category
   Future<void> updateCategory(Category category) async {
-    final box = store.box<Category>();
-    box.put(category);
+    await categoryService.updateCategory(category);
   }
 
-  // Delete category
   Future<void> deleteCategory(int id) async {
-    final box = store.box<Category>();
-    box.remove(id);
+    await categoryService.deleteCategory(id);
   }
 }

@@ -1,29 +1,28 @@
 import 'package:template_flutter_provider/data/entities/payment_method.dart';
-import 'package:template_flutter_provider/data/repositories/payment_method_repository.dart';
+import 'package:objectbox/objectbox.dart';
 
 class PaymentMethodService {
-  final PaymentMethodRepository repository;
+  final Store store;
 
-  PaymentMethodService(this.repository);
+  PaymentMethodService(this.store);
 
-  Future<void> addPaymentMethod(String name, String description) async {
-    final method = PaymentMethod(name: name, description: description);
-    await repository.addPaymentMethod(method);
+  Future<void> addPaymentMethod(PaymentMethod method) async {
+    store.box<PaymentMethod>().put(method);
   }
 
   List<PaymentMethod> getAllPaymentMethods() {
-    return repository.getAllPaymentMethods();
+    return store.box<PaymentMethod>().getAll();
   }
 
   PaymentMethod? getPaymentMethodById(int id) {
-    return repository.getPaymentMethodById(id);
+    return store.box<PaymentMethod>().get(id);
   }
 
   Future<void> updatePaymentMethod(PaymentMethod method) async {
-    await repository.updatePaymentMethod(method);
+    store.box<PaymentMethod>().put(method);
   }
 
   Future<void> deletePaymentMethod(int id) async {
-    await repository.deletePaymentMethod(id);
+    store.box<PaymentMethod>().remove(id);
   }
 }

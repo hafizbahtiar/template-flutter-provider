@@ -4,6 +4,7 @@ import 'package:template_flutter_provider/core/navigation/routes_name.dart';
 import 'package:template_flutter_provider/data/entities/user.dart';
 import 'package:template_flutter_provider/data/objectbox/objectbox.dart';
 import 'package:template_flutter_provider/data/repositories/user_repository.dart';
+import 'package:template_flutter_provider/data/services/user_service.dart';
 import 'package:template_flutter_provider/features/home/home_provider.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -14,7 +15,7 @@ class HomeScreen extends StatelessWidget {
     final objectBox = context.read<ObjectBox>();
 
     return ChangeNotifierProvider(
-      create: (BuildContext context) => UserProvider(userRepository: UserRepository(objectBox.store)),
+      create: (BuildContext context) => UserProvider(userRepository: UserRepository(UserService(objectBox.store))),
       child: Consumer<UserProvider>(
         builder: (context, userProvider, _) {
           return Scaffold(

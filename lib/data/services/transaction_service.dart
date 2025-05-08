@@ -1,50 +1,45 @@
 import 'package:template_flutter_provider/data/entities/transaction.dart';
-import 'package:template_flutter_provider/data/entities/category.dart';
-import 'package:template_flutter_provider/data/entities/payment_method.dart';
-import 'package:template_flutter_provider/data/entities/user.dart';
-import 'package:template_flutter_provider/data/repositories/transaction_repository.dart';
+
+import '../objectbox/objectbox.g.dart';
 
 class TransactionService {
-  final TransactionRepository transactionRepository;
+  final Store store;
 
-  TransactionService(this.transactionRepository);
+  TransactionService(this.store);
 
-  Future<void> addTransaction({
-    required DateTime date,
-    required double amount,
-    required String description,
-    required Category category,
-    required PaymentMethod paymentMethod,
-    required User user,
-    bool isRecurring = false,
-    String? recurrenceInterval,
-    String status = "Pending",
-  }) async {
-    final transaction = Transaction(
-      date: date,
-      amount: amount,
-      isRecurring: isRecurring,
-      recurrenceInterval: recurrenceInterval,
-      status: status,
-      description: description,
-    );
-
-    await transactionRepository.addTransaction(transaction);
+  // Add a new transaction
+  Future<void> addTransaction(Transaction transaction) async {
+    final box = store.box<Transaction>();
+    box.put(transaction);
   }
 
+  // Get all transactions
   List<Transaction> getAllTransactions() {
-    return transactionRepository.getAllTransactions();
+    final box = store.box<Transaction>();
+    return box.getAll();
   }
 
+  // Get transactions by category
+  List<Transaction> getTransactionsByCategory(int categoryId) {
+    final box = store.box<Transaction>();
+    return box.query(Transaction_.categoryId.equals(categoryId)).build().find();
+  }
+
+  // Get transaction by ID
   Transaction? getTransactionById(int id) {
-    return transactionRepository.getTransactionById(id);
+    final box = store.box<Transaction>();
+    return box.get(id);
   }
 
+  // Update a transaction
   Future<void> updateTransaction(Transaction transaction) async {
-    await transactionRepository.updateTransaction(transaction);
+    final box = store.box<Transaction>();
+    box.put(transaction);
   }
 
+  // Delete a transaction
   Future<void> deleteTransaction(int id) async {
-    await transactionRepository.deleteTransaction(id);
+    final box = store.box<Transaction>();
+    box.remove(id);
   }
 }
